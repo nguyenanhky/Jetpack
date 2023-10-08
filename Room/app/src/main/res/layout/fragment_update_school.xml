@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="school"
+            type="kynv1.it.fsoft.learnjetpack.database.model.School" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".view.fragment.UpdateSchoolFragment">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:background="#4FD8CB"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <TextView
+                android:textColor="#F44336"
+                android:textSize="30sp"
+                android:fontFamily="@font/cambo"
+                android:text="Update School"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:text="@{school.schoolName}"
+                android:layout_margin="20dp"
+                android:id="@+id/updateSchoolName"
+                android:hint="School Name "
+                android:padding="4dp"
+                android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:background="@drawable/cardview_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:text="@{school.schoolAddress}"
+                android:layout_margin="20dp"
+                android:id="@+id/updateSchoolAddress"
+                android:hint="School Address"
+                android:padding="4dp"
+                android:paddingStart="10dp"
+                android:textSize="20sp"
+                android:background="@drawable/cardview_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/updateSchool"
+                android:text="Update School"
+                android:background="@drawable/button_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

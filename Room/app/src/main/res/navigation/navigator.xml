@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigator"
+    app:startDestination="@id/schoolListFragment">
+
+    <fragment
+        android:id="@+id/schoolListFragment"
+        tools:layout="@layout/fragment_school_list"
+        android:name="kynv1.it.fsoft.learnjetpack.views.SchoolListFragment"
+        android:label="School List Fragment">
+        <!--        <action android:id="@+id/fromList_to_addStudent"-->
+        <!--            app:destination="@+id/addStudentFragment"-->
+        <!--            />-->
+
+        <action android:id="@+id/fromList_to_addSchool"
+            app:destination="@+id/addSchoolFragment"
+            />
+
+        <!--        <action android:id="@+id/fromList_to_updateStudent"-->
+        <!--            app:destination="@+id/updateStudentFragment"-->
+        <!--            />-->
+        <!--        <action android:id="@+id/fromList_to_updateSchool"-->
+        <!--            app:destination="@+id/updateSchoolFragment"-->
+        <!--            />-->
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/addSchoolFragment"
+        tools:layout="@layout/fragment_add_school"
+        android:name="kynv1.it.fsoft.learnjetpack.views.fragment.AddSchoolFragment"
+        android:label="Add School">
+
+
+        <action android:id="@+id/fromAddSchool_to_List"
+            app:destination="@+id/schoolListFragment"/>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addStudentFragment"
+        tools:layout="@layout/fragment_add_student"
+        android:name="kynv1.it.fsoft.learnjetpack.views.fragment.AddStudentFragment"
+        android:label="Add Student">
+
+        <!--        <action android:id="@+id/fromAddStudent_to_List"-->
+        <!--            app:destination="@+id/schoolListFragment"/>-->
+
+        <!--        <argument-->
+        <!--            android:name="school"-->
+        <!--            app:argType="gst.trainingcourse.schoolmanagement.database.model.School[]" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateSchoolFragment"
+        android:label="Update School"
+        android:name="kynv1.it.fsoft.learnjetpack.views.fragment.UpdateSchoolFragment"
+        tools:layout="@layout/fragment_update_school">
+
+        <!--        <action android:id="@+id/fromUpdateSchool_to_List"-->
+        <!--            app:destination="@+id/schoolListFragment"/>-->
+
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateStudentFragment"
+        android:label="Update Student"
+        tools:layout="@layout/fragment_update_student"
+        android:name="kynv1.it.fsoft.learnjetpack.views.fragment.UpdateStudentFragment">
+
+        <!--        <action android:id="@+id/fromUpdateStudent_to_List"-->
+        <!--            app:destination="@+id/schoolListFragment"/>-->
+
+    </fragment>
+
+</navigation>
