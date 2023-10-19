@@ -14,7 +14,6 @@ class TaskViewModel : ViewModel(){
 
     fun performTask(){
         _taskState.value = TaskState.Loading
-
         // Simulate a delay
         Handler(Looper.getMainLooper()).postDelayed({
             // Thực hiện tác vụ và kiểm tra kết quả
