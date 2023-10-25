@@ -4,20 +4,80 @@
 
     <data>
 
+        <variable
+            name="viewmodel"
+            type="com.fatherofapps.androidbase.ui.home.HomeViewModel" />
+
+        <import type="android.view.View" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:text="Home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="24dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Firstname"
+                android:textSize="14sp" />
+
+
+            <EditText
+                android:id="@+id/edtFirstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:onTextChanged="@{viewmodel::onFirstnameChanged}"
+                android:text="@{viewmodel.currentCustomer.firstName}"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Firstname can not be empty"
+                android:textColor="@color/error_color"
+                android:visibility="@{viewmodel.currentCustomer.validateFirstname? View.GONE:View.VISIBLE}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LastName"
+                android:textSize="14sp" />
+
+
+            <EditText
+                android:id="@+id/edtLastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:onTextChanged="@{viewmodel::onLastnameChanged}"
+                android:text="@{viewmodel.currentCustomer.lastName}"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lastname can not be empty"
+                android:textColor="@color/error_color"
+                android:visibility="@{viewmodel.currentCustomer.validateLastname? View.GONE:View.VISIBLE}" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:alpha="@{viewmodel.currentCustomer.validateData()?1.0f:0.8f}"
+                android:enabled="@{viewmodel.currentCustomer.validateData()}"
+                android:onClick="@{()->viewmodel.registerAction()}"
+                android:paddingVertical="6dp"
+                android:text="Register" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 </layout>
